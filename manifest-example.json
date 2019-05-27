@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "save-to-spreadsheets",
+    "version": "0.1",
+    "key": "",
+    "oauth2": {
+        "client_id": "",
+        "scopes":["https://www.googleapis.com/auth/spreadsheets"]
+    },
+    "permissions": [
+        "identity"
+    ],
+    "browser_action": {
+        "default_title": "FriendBlock, friends face's in a block."
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["assets/js/webcomponents-sd-ce.js", "assets/js/components/menu.js"]
+        },
+        {
+            "matches": ["https://www1.compras.mg.gov.br/execucaodespesas/empenho/cadastroempenho/telaEdicaoDadosEspecifEmpenho.html*"],
+            "js": ["content/compras/empenhos.js"]
+        } 
+    ]
+}
