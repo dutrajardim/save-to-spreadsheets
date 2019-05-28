@@ -1,9 +1,7 @@
-const template = document.createElement('template')
+let template = document.createElement('template')
 
 template.innerHTML = `
 <style>
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300');
-
 .material-icons {
     font-family: 'Material Icons';
     font-style: normal;

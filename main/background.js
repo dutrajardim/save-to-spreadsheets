@@ -1,7 +1,3 @@
-chrome.browserAction.onClicked.addListener(function() {
-    chrome.tabs.create({url: 'https://docs.google.com/spreadsheets/d/1Tsz47yApWk-9DRwIks-2eAPwzShlPDgXH8XR-zCFNB0/edit#gid=0'});
-});
-
 let token
 
 chrome.identity.getAuthToken({ 

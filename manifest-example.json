@@ -2,7 +2,6 @@
     "manifest_version": 2,
     "name": "save-to-spreadsheets",
     "version": "0.1",
-    "key": "",
     "oauth2": {
         "client_id": "",
         "scopes":["https://www.googleapis.com/auth/spreadsheets"]
