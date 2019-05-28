@@ -1,7 +1,11 @@
 let token
 
-chrome.identity.getAuthToken({ 
-    interactive: true 
+chrome.browserAction.onClicked.addListener(function (tab) {
+    chrome.tabs.create({"url": "pages/home/index.html"});
+});
+
+chrome.identity.getAuthToken({
+    interactive: true
 }, (token) => {
     this.token = token
 })

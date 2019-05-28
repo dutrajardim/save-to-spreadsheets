@@ -1,4 +1,5 @@
-let template = document.createElement('template')
+(() => {
+const template = document.createElement('template')
 
 template.innerHTML = `
 <div class="table-responsive">
@@ -14,7 +15,6 @@ template.innerHTML = `
 class Table extends HTMLElement {
     constructor() {
         super()
-        // this._shadowRoot = this.attachShadow({ 'mode': 'open' })
         this.appendChild(template.content.cloneNode(true))
         this.$header = this.querySelector('thead')
         this.$body = this.querySelector('tbody')
@@ -34,7 +34,6 @@ class Table extends HTMLElement {
     }
 
     _renderBody() {
-        console.log(this._body)
         this.$body.innerHTML = ""
         this._body.forEach((row, index) => {
             let tr = document.createElement("tr")
@@ -52,15 +51,12 @@ class Table extends HTMLElement {
         })
     }
 
-    _renderData() {
-        this._renderHeader()
-        this._renderBody()
-    }
-
     set data(val) {
         this._header = val.shift()
+        this._renderHeader()
+
         this._body = val
-        this._renderData()
+        this._renderBody()
     }
 
     get data() {
@@ -68,3 +64,5 @@ class Table extends HTMLElement {
     }
 }
 customElements.define('dj-table', Table)
+
+})()

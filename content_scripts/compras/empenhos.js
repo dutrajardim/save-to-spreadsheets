@@ -33,7 +33,8 @@ let openSheetHandler = () => {
 
 let saveInformationHandler = () => {
     let sheetsUrl = "https://sheets.googleapis.com/v4/spreadsheets/"
-    let sheetId = '1Tsz47yApWk-9DRwIks-2eAPwzShlPDgXH8XR-zCFNB0'
+    let key = configs.apiKey
+    let sheetId = configs.sheetId
     let searchParams = new URLSearchParams({
         insertDataOption: "INSERT_ROWS",
         valueInputOption: "USER_ENTERED",

@@ -6,11 +6,12 @@
         "client_id": "",
         "scopes":["https://www.googleapis.com/auth/spreadsheets"]
     },
+    "content_security_policy": "script-src 'self' https://code.jquery.com/jquery-3.2.1.slim.min.js; object-src 'self'",
     "permissions": [
-        "identity"
+        "identity", "http://www.google.com/"
     ],
     "browser_action": {
-        "default_title": "FriendBlock, friends face's in a block."
+        "default_title": "Salvar para spreadsheets"
     },
     "background": {
         "scripts": [
@@ -21,11 +22,11 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["assets/js/webcomponents-sd-ce.js", "assets/js/components/menu.js"]
+            "js": ["dependences/webcomponents-sd-ce.js", "configs.js", "components/menu.js"]
         },
         {
             "matches": ["https://www1.compras.mg.gov.br/execucaodespesas/empenho/cadastroempenho/telaEdicaoDadosEspecifEmpenho.html*"],
-            "js": ["content/compras/empenhos.js"]
+            "js": ["content_scripts/compras/empenhos.js"]
         } 
     ]
 }
